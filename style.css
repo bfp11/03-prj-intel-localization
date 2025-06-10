@@ -1,10 +1,11 @@
-/* General Reset and Base Styles */
+/* Reset box sizing */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Base body styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f5f9fc;
@@ -13,7 +14,7 @@ body {
   padding-bottom: 3rem;
 }
 
-/* Header / Hero Section */
+/* Header section */
 header {
   background: linear-gradient(to right, #0071c5, #005f9e);
   color: white;
@@ -27,7 +28,7 @@ header img {
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
 }
 
@@ -37,92 +38,41 @@ header p {
   margin: 0 auto;
 }
 
-/* Timeline Section */
-section {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 2rem 1rem;
-  gap: 1rem;
-}
-
-section > div {
-  flex: 0 0 300px;
-  background: white;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  scroll-snap-align: start;
+/* Hover effect on cards */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
 }
 
-/* Card hover effect */
-section > div:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+/* Modal customization (optional) */
+.modal-body {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* Images in cards */
-section img {
-  width: 100%;
-  border-radius: 0.5rem;
-  margin: 0.5rem 0;
-}
-
-/* Paragraph text (hidden by default, shown on hover for desktop) */
-section > div p {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-/* Reveal only hovered card's text (desktop only) */
-section > div:hover p {
-  opacity: 1;
-  max-height: 300px;
-  margin-top: 0.5rem;
-}
-
-/* Footer Note */
-body > p:last-of-type {
-  text-align: center;
+/* Footer styles */
+footer a {
+  text-decoration: underline;
   font-size: 0.9rem;
-  color: #555;
-  margin-top: 1rem;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  section {
-    flex-direction: column;
-    overflow-x: visible;
-    scroll-snap-type: none;
-  }
+footer p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
 
-  section > div {
-    width: 100%;
-    flex: 1 1 auto;
-  }
+/* Form spacing */
+form .form-control {
+  font-size: 1rem;
+}
 
-  header h1 {
-    font-size: 1.5rem;
-  }
+/* RTL handling helpers (optional fallback) */
+[dir="rtl"] header,
+[dir="rtl"] footer {
+  text-align: right;
+}
 
-  header p {
-    font-size: 1rem;
-  }
-
-  /* Always show paragraph text on mobile */
-  section > div p {
-    opacity: 1 !important;
-    max-height: none !important;
-    margin-top: 0.5rem;
-  }
+[dir="rtl"] .card-text {
+  text-align: right;
 }
