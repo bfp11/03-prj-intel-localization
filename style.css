@@ -45,7 +45,7 @@ header p {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Modal customization (optional) */
+/* Modal customization */
 .modal-body {
   font-size: 1rem;
   line-height: 1.5;
@@ -67,7 +67,7 @@ form .form-control {
   font-size: 1rem;
 }
 
-/* RTL handling helpers (optional fallback) */
+/* RTL handling helpers  */
 [dir="rtl"] header,
 [dir="rtl"] footer {
   text-align: right;
